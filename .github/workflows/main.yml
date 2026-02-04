@@ -19,6 +19,7 @@ jobs:
       run: bandit -ll -ii -r . -f json -o bandit-report.json
     - name: downloading artifact
       uses: actions/upload-artifact@v6.0.0
+      if: always()
       with:
         path: bandit-report.json
         name: bandit-report
